@@ -15,11 +15,13 @@ const router = require("./router/routes.js")
 const swaggerUi = require("swagger-ui-express")
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerConfig = require("./swagger/swagger")
+const cors = require("cors")
 const swaggerSpec = swaggerJSDoc(swaggerConfig);
 const app = express()
 const db = require("./db")
 db(`mongodb+srv://${dbUser}:${dbPassword}${dbHost}/${dbName}`)
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true
@@ -27,11 +29,6 @@ app.use(bodyParser.urlencoded({
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 router(app)
-
-app.use('/', express.static('public'))
-
-
-
 
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
