@@ -16,6 +16,7 @@ const options = {
         ],
     },
     apis: ["./components/products/network.js"]
+    
 }
 
 module.exports = options
