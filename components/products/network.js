@@ -4,7 +4,6 @@ const response = require("../../responses/responses")
 const controller = require("./controller")
 
 router.get('/', async (req, res) => {
-    console.log(req)
     try {
         let products = await controller.getProducts()
         response.success(req, res, products, 200)
