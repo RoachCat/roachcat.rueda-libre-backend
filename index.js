@@ -28,6 +28,11 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec))
 
 router(app)
 
+app.use('/', express.static('public'))
+
+
+
+
 app.listen(port, () => {
     console.log(`Listening on http://localhost:${port}`);
 })
