@@ -19,9 +19,9 @@ const cors = require("cors")
 const swaggerSpec = swaggerJSDoc(swaggerConfig);
 const app = express()
 const db = require("./db")
-db(`mongodb+srv://${dbUser}:${dbPassword}${dbHost}/${dbName}`)
+db(`mongodb+srv://${dbUser}:${dbPassword}${dbHost}/${dbName}?retryWrites=true&w=majority`)
 
-app.use(cors())
+// app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
     extended: true

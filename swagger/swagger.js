@@ -11,7 +11,7 @@ const options = {
                 url: "http://localhost:3000"
             },
             {
-                url: "https://app-bf57af81-5b5b-4e2c-b8c5-ace55df91723.cleverapps.io"
+                url: "https://rueda-libre-backend.herokuapp.com"
             }
         ],
     },
